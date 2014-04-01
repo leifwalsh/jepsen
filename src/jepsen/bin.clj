@@ -11,9 +11,9 @@
                             riak-lww-sloppy-quorum-app
                             riak-crdt-app
                             ]]
-        jepsen.mongo
         [jepsen.pg    :only [pg-app]]
         [jepsen.nuodb :only [nuodb-app]]
+        jepsen.tokumx
         [jepsen.zk    :only [zk-app]]
         [clojure.tools.cli :only [cli]]
         [jepsen.control :only [*password*]]
@@ -28,10 +28,6 @@
    "cassandra-transaction"  cassandra/transaction-app
    "cassandra-transaction-dup" cassandra/transaction-dup-app
    "kafka"                  kafka/app
-   "mongo-replicas-safe"    mongo-replicas-safe-app
-   "mongo-safe"             mongo-safe-app
-   "mongo-unsafe"           mongo-unsafe-app
-   "mongo"                  mongo-app
    "redis-sentinel"         redis/sentinel-app
    "redis-wait"             redis/wait-app
    "riak-lww-all"           riak-lww-all-app
@@ -40,6 +36,10 @@
    "riak-crdt"              riak-crdt-app
    "pg"                     pg-app
    "nuodb"                  nuodb-app
+   "tokumx-replicas-safe"    tokumx-replicas-safe-app
+   "tokumx-safe"             tokumx-safe-app
+   "tokumx-unsafe"           tokumx-unsafe-app
+   "tokumx"                  tokumx-app
    "zk"                     zk-app
    "lock"                   locking-app})
 

@@ -1,7 +1,7 @@
 require 'fileutils'
 
 load __DIR__/'etcd.rb'
-load __DIR__/'mongo.rb'
+load __DIR__/'tokumx.rb'
 load __DIR__/'nuodb.rb'
 load __DIR__/'postgres.rb'
 load __DIR__/'redis.rb'
@@ -28,7 +28,7 @@ role :jepsen do
   task :setup do
     base.setup
     etcd.setup
-    mongo.setup
+    tokumx.setup
     postgres.setup
     redis.setup
     riak.setup
@@ -114,12 +114,12 @@ group :jepsen do
   host :n5
   
   each_host do
-    user :ubuntu
+    user :root
     role :base
     role :cassandra
     role :etcd
     role :kafka
-    role :mongo
+    role :tokumx
     role :nuodb
     role :postgres
     role :redis
